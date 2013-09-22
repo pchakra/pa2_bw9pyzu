@@ -15,7 +15,7 @@ INSERT INTO User VALUES
 
  INSERT INTO Album VALUES
  (
- 1, 'I love sports', CURDATE(), CURDATE(), 'sportslover'
+ 1, 'I love sports', CURDATE(), CURDATE(), 'sportslover', 'public'
  );
  INSERT INTO Album (title, created, lastupdated, username)VALUES
  (
@@ -29,7 +29,6 @@ INSERT INTO User VALUES
  (
  'Cool Space Shots', CURDATE(), CURDATE(), 'spacejunkie'
  );
- 
  
 
  INSERT INTO Photo VALUES
@@ -187,3 +186,9 @@ INSERT INTO User VALUES
 (4,'pic29','space_MilkyWay',4);
  INSERT INTO Contain (albumid, picid, caption, sequencenum) VALUES
 (4,'pic30','space_OrionNebula',5);
+
+UPDATE Album
+SET access = "private"
+WHERE albumid = 4;
+
+INSERT INTO AlbumAccess VALUES(4, 'traveler');

@@ -30,12 +30,27 @@ CREATE TABLE User
  
  CREATE TABLE Contain
  (
- albumid INT NOT NULL AUTO_INCREMENT,
+ albumid INT NOT NULL,
  FOREIGN KEY (albumid) REFERENCES Album(albumid),
- picid VARCHAR(40),
+ picid VARCHAR(40) NOT NULL,
  FOREIGN KEY (picid) REFERENCES Photo(picid),
  PRIMARY KEY(albumid, picid),
  caption VARCHAR(255),
  sequencenum INT
  );
-
+ 
+ CREATE TABLE AlbumAccess
+ (
+ albumid INT NOT NULL,
+ FOREIGN KEY (albumid) REFERENCES Album(albumid),
+ username VARCHAR(20) NOT NULL,
+ FOREIGN KEY (username) REFERENCES User(username),
+ PRIMARY KEY(albumid, username)
+ );
+ 
+ ALTER TABLE Album
+ ADD COLUMN access VARCHAR(7) NOT NULL DEFAULT "public"; 
+ 
+ ALTER TABLE Album
+ ADD CONSTRAINT checkAccess CHECK (access in ("public","private"));
+ 
