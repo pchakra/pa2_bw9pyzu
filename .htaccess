@@ -1,0 +1,15 @@
+RewriteEngine On
+
+# Redirect all traffic to index.php except:
+#  - index.php
+#  - static/
+#  - robots.txt (convention)
+RewriteRule ^/$ /index1.php [L]
+
+RewriteRule ^albums$ albums.php?username=%1 [QSA]
+RewriteRule ^albums/edit?$ albums1/edit.php?username=%1 [QSA]
+
+RewriteRule ^album?$ album.php?id=%1 [QSA]
+RewriteRule ^album/edit?$ album1/edit.php?id=%1 [QSA]
+
+RewriteRule ^pic$ pic.php?id=%1 [QSA]
