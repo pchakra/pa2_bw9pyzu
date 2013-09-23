@@ -1,14 +1,14 @@
 INSERT INTO User VALUES
  (
- 'sportslover', 'Paul', 'Walker', 'abc', 'sportslover@hotmail.com' 
+ 'sportslover', 'Paul', 'Walker', 'paulpass93', 'sportslover@hotmail.com' 
  );
  INSERT INTO User VALUES
  (
- 'traveler', 'Rebecca', 'Travolta', 'abc', 'rebt@explorer.org' 
+ 'traveler', 'Rebecca', 'Travolta', 'rebeccapass15', 'rebt@explorer.org' 
  );
  INSERT INTO User VALUES
  (
- 'spacejunkie', 'Bob', 'Spacey', 'abc', 'bspace@spacejunkies.net' 
+ 'spacejunkie', 'Bob', 'Spacey', 'bob1pass', 'bspace@spacejunkies.net' 
  );
  
  
